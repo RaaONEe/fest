@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="profile" href="http://gmpg.org/xfn/11" />
+
+  <title>Events - 7-Lake-Fest IIMC</title>
+
+  <!-- external stylesheet -->
+  <link rel="stylesheet" href="/Style/events.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://YOUR-CDN.example/7lakefest-favicon-32.png" sizes="32x32" />
+  <link rel="icon" href="https://YOUR-CDN.example/7lakefest-favicon-192.png" sizes="192x192" />
+  <link rel="apple-touch-icon" href="https://YOUR-CDN.example/7lakefest-apple-180.png" />
+  <meta name="msapplication-TileImage" content="https://YOUR-CDN.example/7lakefest-ms-270.png" />
+</head>
+
+<body class="home">
+  <div class="site">
+
+    <!-- HEADER -->
+    <header class="site-header">
+  <div class="wrap header-inner">
+
+    <!-- LEFT: IIMC LOGO -->
+    <div class="brand-left">
+      <a href="https://www.iimcal.ac.in/">
+        <img src="/assets/IIMClogo.png" alt="IIM Calcutta Logo">
+      </a>
+    </div>
+
+    <!-- CENTER: 7-Lake Logo + Text -->
+    <div class="brand-center">
+      <a href="https://www.iimcal.ac.in/">
+        <img src="/assets/7lakelogo.jpg" alt="7-Lake-Fest IIMC Lockup">
+      </a>
+      <h1>
+        <a href="/" style="text-decoration:none;color:#000;">
+          7-Lake-Fest IIMC
+        </a>
+      </h1>
+    </div>
+
+    <!-- RIGHT: NAVIGATION -->
+    <nav class="main-nav" aria-label="Main Menu">
+      <ul>
+        <li><a href="/sponsors.html">Sponsors</a></li>
+        <li><a href="/events.html">Events</a></li>
+        <li><a href="/Speakers.html">Speakers</a></li>
+        <li><a href="/stats.html">Scoreboard</a></li>
+        <li><a href="/contact.html">Reach Us</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+    <!-- SEARCH -->
+    <div class="search-bar">
+      <div class="wrap search-inner">
+        <input id="searchInput" class="search-input" type="search" placeholder="Search events by name… e.g., Crescendo, Pixel Perfect" aria-label="Search events by name">
+        <button id="clearBtn" class="clear-btn" type="button" aria-label="Clear search">Clear</button>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <main id="site-content">
+      <!-- TIMELINE (DETAILED) -->
+      <section class="events-timeline">
+        <div class="wrap">
+          <h2 class="box-title">Timeline</h2>
+          <p>Full schedule with time, location, and a short note for each event.</p>
+
+          <div id="timeline" class="timeline" aria-live="polite"></div>
+          <p id="noTimeline" style="display:none;color:#666;margin:6px 0 0">No events found for that search.</p>
+        </div>
+      </section>
+
+      <!-- GRID (PICTURE + NAME + STATUS) -->
+      <section class="events-grid-wrap">
+        <div class="wrap">
+          <div class="grid-header">
+            <h2 class="box-title">All Events</h2>
+            <span id="countBadge" class="count-badge"></span>
+          </div>
+          <div id="grid" class="events-grid"></div>
+          <p id="noGrid" style="display:none;color:#666;margin:8px 0 0">No events to display.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="wrap">
+        <div>
+          <img src="/assets/7lakelogo.jpg" alt="7-Lake-Fest IIMC" class="footer-logo">
+        </div>
+        <div>
+          <h3>Address</h3>
+          <ul style="list-style:none;padding-left:0;line-height:1.8">
+            <li>Indian Institute of Management Calcutta</li>
+            <li>Joka, Kolkata, West Bengal 700104</li>
+            <li><a href="mailto:7lakefest@iimcal.ac.in">7lakefest@iimcal.ac.in</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Events</h3>
+          <p><a href="/events.html">See full schedule →</a></p>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <p><a href="/contact.html">Reach the team →</a></p>
+        </div>
+      </div>
+
+      <div class="site-info">
+        <div class="socials">
+          <a href="https://www.facebook.com/YOUR.PAGE" aria-label="Facebook">Facebook</a>
+          <a href="https://x.com/YOUR.HANDLE" aria-label="Twitter / X">X</a>
+          <a href="https://www.instagram.com/YOUR.HANDLE" aria-label="Instagram">Instagram</a>
+          <a href="https://www.linkedin.com/company/YOUR.COMPANY" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+        <div>
+          <a href="https://YOUR-DOMAIN.example/">7-Lake-Fest IIMC</a> |
+          Design &amp; Developed by: <a href="https://www.iimcal.ac.in" target="_blank" rel="noopener">Core Digital Team, IIMC</a> |
+          &copy; <span id="year"></span> All rights reserved
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ------- EVENT DATA (JSON embedded) -------
+    const eventsData = [
+      {
+        id:'adm', title:'Ad-Mad (Ad Making)', img:'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/ad-mad.html',
+        start:'2025-01-10T10:00:00+05:30', end:'2025-01-10T12:30:00+05:30',
+        location:'Main Hall', note:'Pitch your wildest ad ideas with a tight brief and big energy.'
+      },
+      {
+        id:'dc', title:'Director’s Cut (Short Film)', img:'https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/directors-cut.html',
+        start:'2025-01-10T14:00:00+05:30', end:'2025-01-10T17:30:00+05:30',
+        location:'Seminar Hall', note:'From script to screen—short films judged by industry guests.'
+      },
+      {
+        id:'pixel', title:'Pixel Perfect (Photography)', img:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/pixel-perfect.html',
+        start:'2025-01-11T09:30:00+05:30', end:'2025-01-11T11:30:00+05:30',
+        location:'Campus Grounds', note:'Capture stories in frames. Solo category.'
+      },
+      {
+        id:'razz', title:'Razzmatazz (Group Fashion)', img:'https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/razzmatazz.html',
+        start:'2025-01-12T18:00:00+05:30', end:'2025-01-12T20:00:00+05:30',
+        location:'Open Arena', note:'Runway spectacle with coordinated styling and themes.'
+      },
+      {
+        id:'fourth', title:'Fourth Wall (Stage Play)', img:'https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/fourth-wall.html',
+        start:'2025-01-10T18:30:00+05:30', end:'2025-01-10T20:00:00+05:30',
+        location:'Auditorium', note:'Classic theatre with a campus twist.'
+      },
+      {
+        id:'cres', title:'Crescendo (Battle of Bands)', img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/crescendo.html',
+        start:'2025-01-10T20:30:00+05:30', end:'2025-01-10T22:30:00+05:30',
+        location:'Main Stage', note:'Originals or covers—turn the decibels up and wow the crowd.'
+      },
+      {
+        id:'petersong', title:'Petersong (Solo Music)', img:'https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/petersong.html',
+        start:'2025-01-11T15:00:00+05:30', end:'2025-01-11T17:00:00+05:30',
+        location:'Amphitheatre', note:'Your voice. Your vibe. Your stage.'
+      },
+      {
+        id:'aaghaaz', title:'Aaghaaz (Street Play)', img:'https://images.unsplash.com/photo-1514510167568-75c2df5dfb37?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/aaghaaz.html',
+        start:'2025-01-12T10:00:00+05:30', end:'2025-01-12T12:00:00+05:30',
+        location:'Central Plaza', note:'Raw, powerful street theatre to spark conversations.'
+      },
+      {
+        id:'tango', title:'Two to Tango (Duet Dance)', img:'https://images.unsplash.com/photo-1505069190533-da1c9af133d0?q=80&w=1600&auto=format&fit=crop',
+        href:'/events/two-to-tango.html',
+        start:'2025-01-12T16:00:00+05:30', end:'2025-01-12T17:30:00+05:30',
+        location:'Cultural Stage', note:'Chemistry and choreography in perfect sync.'
+      }
+    ];
+
+    // ------- Helpers -------
+    const fmtDate = (iso) => {
+      const d = new Date(iso);
+      return d.toLocaleString('en-IN', {weekday:'short', month:'short', day:'2-digit', hour:'numeric', minute:'2-digit', hour12:true});
+    };
+    const dayKey = (iso) => {
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-CA'); // YYYY-MM-DD
+    };
+    const dayLabel = (iso) => {
+      const d = new Date(iso);
+      return d.toLocaleDateString('en-IN', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+    };
+    const statusOf = (ev) => {
+      const now = new Date();
+      const s = new Date(ev.start);
+      const e = new Date(ev.end);
+      if (now < s) return 'upcoming';
+      if (now >= s && now <= e) return 'live';
+      return 'completed';
+    };
+
+    // ------- Renderers -------
+    const timelineEl = document.getElementById('timeline');
+    const noTimelineEl = document.getElementById('noTimeline');
+    const gridEl = document.getElementById('grid');
+    const noGridEl = document.getElementById('noGrid');
+    const countBadge = document.getElementById('countBadge');
+    const searchInput = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearBtn');
+
+    function render(data){
+      // Sort by start time
+      const items = [...data].sort((a,b)=> new Date(a.start) - new Date(b.start));
+
+      // Group by day for timeline
+      const groups = {};
+      items.forEach(ev=>{
+        const key = dayKey(ev.start);
+        if(!groups[key]) groups[key] = {label: dayLabel(ev.start), items:[]};
+        groups[key].items.push(ev);
+      });
+
+      // Timeline
+     timelineEl.innerHTML = '';
+     Object.keys(groups).sort().forEach(key=>{
+    const g = groups[key];
+    const group = document.createElement('div');
+    group.className = 't-group';
+    group.innerHTML = `<div class="t-date">${g.label}</div>`;
+
+  g.items.forEach(ev=>{
+    const st = statusOf(ev);
+    const pillClass = st==='upcoming' ? 'status-upcoming' : (st==='live' ? 'status-live' : 'status-completed');
+    const pillText = st==='upcoming' ? 'Upcoming' : (st==='live' ? 'Live Now' : 'Completed');
+
+    // Use a link wrapper so timeline items behave like the grid cards
+    const wrapper = document.createElement('a');
+    wrapper.href = ev.href || '#';
+    wrapper.className = 'timeline-link';
+    wrapper.setAttribute('aria-label', ev.title);
+    // prevent focus going to `#` links that don't lead anywhere
+    if (!ev.href) wrapper.addEventListener('click', (e)=> e.preventDefault());
+
+    const item = document.createElement('article');
+    item.className = 't-item';
+    item.innerHTML = `
+      <div class="t-top">
+        <h3 class="t-title">${ev.title}</h3>
+        <span class="status-pill ${pillClass}">${pillText}</span>
+      </div>
+      <div class="t-facts">
+        <span>🕒 ${fmtDate(ev.start)} — ${new Date(ev.end).toLocaleTimeString('en-IN',{hour:'numeric',minute:'2-digit',hour12:true})}</span>
+        <span>📍 ${ev.location}</span>
+      </div>
+      <p class="t-desc">${ev.note || ''}</p>
+    `;
+    // put article inside the link so the whole block is clickable
+    wrapper.appendChild(item);
+    group.appendChild(wrapper);
+  });
+
+  timelineEl.appendChild(group);
+});
+
+ noTimelineEl.style.display = items.length ? 'none' : 'block';
+
+
+      // Grid
+      gridEl.innerHTML = '';
+      items.forEach(ev=>{
+        const st = statusOf(ev);
+        const sc = st==='upcoming'?'s-upcoming':(st==='live'?'s-live':'s-completed');
+        const stText = st==='upcoming'?'Upcoming':(st==='live'?'Live':'Completed');
+        const card = document.createElement('a');
+        card.href = ev.href || '#';
+        card.className = 'mini-card';
+        card.setAttribute('aria-label', ev.title);
+        card.innerHTML = `
+          <figure class="mini-media">
+            <img src="${ev.img}" alt="${ev.title}">
+          </figure>
+          <div class="mini-body">
+            <h3 class="mini-name">${ev.title}</h3>
+            <span class="mini-status ${sc}">${stText}</span>
+          </div>
+        `;
+        gridEl.appendChild(card);
+      });
+
+      noGridEl.style.display = items.length ? 'none' : 'block';
+      countBadge.textContent = items.length ? `${items.length} event${items.length>1?'s':''}` : '';
+    }
+
+    // ------- Search (filters by name) -------
+    function filterData(q){
+      const term = q.trim().toLowerCase();
+      if (!term) return eventsData;
+      return eventsData.filter(ev => ev.title.toLowerCase().includes(term));
+    }
+
+    // Handle query param (?q=...)
+    const urlQ = new URLSearchParams(location.search).get('q') || '';
+    if (urlQ){ searchInput.value = urlQ; }
+
+    function applySearch(){
+      const q = searchInput.value || '';
+      // Update URL (without reloading)
+      const usp = new URLSearchParams(location.search);
+      if (q) usp.set('q', q); else usp.delete('q');
+      history.replaceState(null, '', `${location.pathname}${usp.toString()?`?${usp.toString()}`:''}`);
+      render(filterData(q));
+    }
+
+    // Live filter (with light debounce)
+    let tId;
+    searchInput.addEventListener('input', () => {
+      clearTimeout(tId);
+      tId = setTimeout(applySearch, 120);
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      applySearch();
+      searchInput.focus();
+    });
+
+    // Initial render
+    render(filterData(urlQ));
+  </script>
+</body>
+</html>
